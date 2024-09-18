@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 使缩略图居中 */
+}
+.image-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px; /* 添加内边距，为箭头按钮腾出空间 */
+}
+.thumbnail {
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    transition: transform 0.2s; /* 添加缩略图过渡效果 */
+}
+
+.thumbnail:hover {
+    transform: scale(1.1); /* 悬停时放大缩略图 */
+}
+
+#mainImage {
+    width: 500px;
+    height: 500px;
+    display: block;
+    margin: 20px auto 5px;
+    border: 2px solid #000;
+    transition: filter 0.2s; /* 添加主图像过渡效果 */
+}
+
+.bright {
+    filter: brightness(1.5);
+}
+
+.dark {
+    filter: brightness(0.5);
+}
+
+#bgColorButton {
+    margin: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: rgba(150, 150, 150, 0.6);
+    color: white;
+    transition: background-color 0.3s; /* 按钮背景色过渡效果 */
+    display: block; /* 将按钮设置为块级元素 */
+    width: fit-content; /* 或 max-content，使按钮宽度适应内容 */
+    margin-left: auto; /* 水平居中 */
+    margin-right: auto; /* 水平居中 */
+}
+
+
+#prevButton, #nextButton {
+    font-size: 24px; /* 增大箭头按钮的字体大小 */
+    background-color: transparent; /* 透明背景 */
+    color: #007BFF; /* 箭头颜色 */
+    border: none; /* 无边框 */
+    cursor: pointer; /* 指针光标 */
+    padding: 0 10%; /* 左右内边距 */
+
+}
+#toggleBrightnessButton {
+    padding: 3px 5px;
+    position: absolute;
+    top: 20px;
+    left: 34.7%; /* 水平居中 */
+    transform: translateX(-50%); /* 向左移动按钮宽度的一半，使其居中 */
+    margin: 0;
+    z-index: 10; /* 确保按钮在图像上方 */
+    background-color: transparent; /* 透明背景 */
+    text-shadow: 1px 1px 1px white;
+    border: 1px solid #999;
+    position: absolute;
+    cursor: pointer;
+}
+
+
