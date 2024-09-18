@@ -4,7 +4,8 @@ const images = [
     'images/th (2).jpg',
     'images/th (3).jpg',
     'images/th (4).jpg',
-    'images/微信图片_20240908214923.jpg'
+    'images/微信图片_20240908214923.jpg',
+    
 ];
 
 // 获取画廊和主图像的 DOM 元素
@@ -75,10 +76,20 @@ document.getElementById('toggleBrightnessButton').addEventListener('click', () =
         document.getElementById('toggleBrightnessButton').textContent = '变亮';
     }
 });
+// 声明颜色数组
+const colors = [ '#FFFFFF',  '#FFC0CB', '#90EE90', '#FFD700',  '#87CEEB', '#FFA07A', '#20B2AA',  '#FF69B4', '#BA55D3', '#00FA9A', '#FF4500', '#DA70D6', 
+'#B22222', '#FFA500', '#008000', '#4B0082', '#FFFF00', '#800080', '#808080', '#0000FF', '#000000' ];
+  
+
+// 初始化颜色索引
+let colorIndex = 0;
+
 // 改变背景颜色按钮功能
 document.getElementById('bgColorButton').addEventListener('click', () => {
-    document.body.style.backgroundColor = document.body.style.backgroundColor === 'lightblue' ? 'white' : 'lightblue';
+    // 更新颜色索引，循环遍历颜色数组
+    colorIndex = (colorIndex + 1) % colors.length;
+    // 设置背景颜色
+    document.body.style.backgroundColor = colors[colorIndex];
 });
-
 // 初始化主图像
 updateMainImage();
